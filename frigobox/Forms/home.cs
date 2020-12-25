@@ -12,10 +12,16 @@ namespace frigobox.Forms
 {
     public partial class home : Form
     {
-        public home(bool sql_connected = false)
+        public home(bool h_db_connected = false)
         {
             InitializeComponent();
-            if (!sql_connected)
+            string username = System.Environment.UserName;
+            if (username.Length > 15)
+            {
+                username = "";
+            }
+            this.welcome_text.Text = "Bonjour " + username + "!";
+            if (!h_db_connected)
             {
                 Form info = new Forms.database_creation();
                 info.TopLevel = false;
@@ -24,6 +30,10 @@ namespace frigobox.Forms
                 this.home_info_panel.Controls.Add(info);
                 this.home_info_panel.Tag = info;
                 info.Show();
+            }
+            else
+            {
+                
             }
         }
     }

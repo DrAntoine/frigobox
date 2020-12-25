@@ -25,10 +25,30 @@ namespace frigobox
          */
 
         private Form active_Form;
+        private bool db_connected = false;
         public Frigobox_main()
         {
             InitializeComponent();
-            Open_child_form(new Forms.home(), btn_home);
+            string connectionString = null;
+            SqlConnection dbconnect;
+            // Commenter la ligne en dessous "connectionString = [...]" pour verifier le comportement du prog quand la DB n'est pas connecté. 
+            connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Integrated Security=True;Connect Timeout=30";
+            dbconnect = new SqlConnection(connectionString);
+            try
+            {
+                dbconnect.Open();
+                db_connected = true;
+                dbconnect.Close();
+            }
+            catch (Exception ex)
+            {
+                db_connected = false;
+                this.btn_stock.BackColor = System.Drawing.Color.FromArgb((int)((byte)(66)), (int)((byte)(63)), (int)((byte)(66)));
+                this.btn_recettes.BackColor = System.Drawing.Color.FromArgb((int)((byte)(105)), (int)((byte)(99)), (int)((byte)(104)));
+                //this.btn_courses.BackColor = System.Drawing.Color.FromArgb((int)((byte)(92)), (int)((byte)(87)), (int)((byte)(91)));
+                this.btn_courses.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(92)))), ((int)(((byte)(87)))), ((int)(((byte)(91)))));
+            }
+            Open_child_form(new Forms.home(h_db_connected: db_connected), btn_home);
         }
 
         private void Open_child_form(Form childform, object btnSender)
@@ -49,22 +69,34 @@ namespace frigobox
 
         private void btn_home_Click(object sender, EventArgs e)
         {
-            Open_child_form(new Forms.home(), sender);
+            Open_child_form(new Forms.home(h_db_connected: db_connected), sender);
         }
 
         private void btn_stock_Click(object sender, EventArgs e)
         {
-            Open_child_form(new Forms.stock(), sender);
+            if(db_connected)
+            {
+                Open_child_form(new Forms.stock(), sender);
+            }
         }
 
         private void btn_recettes_Click(object sender, EventArgs e)
         {
-            Open_child_form(new Forms.recettes(), sender);
+            if (db_connected)
+            {
+                Open_child_form(new Forms.recettes(), sender);
+            }
         }
 
         private void btn_courses_Click(object sender, EventArgs e)
         {
-            Open_child_form(new Forms.courses(), sender);
+            if (db_connected)
+            {
+                Open_child_form(new Forms.courses(), sender);
+            }
         }
     }
 }
+
+
+

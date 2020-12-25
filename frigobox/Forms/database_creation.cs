@@ -16,5 +16,10 @@ namespace frigobox.Forms
         {
             InitializeComponent();
         }
+
+        private void noDB_text_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
