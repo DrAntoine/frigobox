@@ -9,3 +9,4 @@ Le but de ce travail consiste à développer une application graphique C# intér
     Et la conception d'un recceuil de recettes.
 
 Les 3 composantes intéragiront ensemble au sein du programme.
+La branche dev contiendra les commits de developpement. 
