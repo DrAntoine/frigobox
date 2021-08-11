@@ -34,6 +34,9 @@ namespace frigobox.Forms
             // 
             // course_main
             // 
+            this.course_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.course_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(27)))), ((int)(((byte)(84)))), ((int)(((byte)(122)))));
             this.course_main.Location = new System.Drawing.Point(20, 20);
             this.course_main.Name = "course_main";

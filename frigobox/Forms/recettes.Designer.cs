@@ -34,6 +34,9 @@ namespace frigobox.Forms
             // 
             // recettes_main
             // 
+            this.recettes_main.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.recettes_main.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(108)))), ((int)(((byte)(156)))));
             this.recettes_main.Location = new System.Drawing.Point(20, 20);
             this.recettes_main.Name = "recettes_main";

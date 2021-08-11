@@ -31,6 +31,9 @@ namespace frigobox
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frigobox_main));
             this.Side_menu = new System.Windows.Forms.Panel();
+            this.LabelCreation = new System.Windows.Forms.Label();
+            this.LabelPrendre = new System.Windows.Forms.Label();
+            this.LabelAjouter = new System.Windows.Forms.Label();
             this.btn_courses = new System.Windows.Forms.Label();
             this.btn_recettes = new System.Windows.Forms.Label();
             this.btn_home = new System.Windows.Forms.Label();
@@ -43,6 +46,9 @@ namespace frigobox
             // Side_menu
             // 
             this.Side_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            this.Side_menu.Controls.Add(this.LabelCreation);
+            this.Side_menu.Controls.Add(this.LabelPrendre);
+            this.Side_menu.Controls.Add(this.LabelAjouter);
             this.Side_menu.Controls.Add(this.btn_courses);
             this.Side_menu.Controls.Add(this.btn_recettes);
             this.Side_menu.Controls.Add(this.btn_home);
@@ -54,6 +60,46 @@ namespace frigobox
             this.Side_menu.Name = "Side_menu";
             this.Side_menu.Size = new System.Drawing.Size(266, 561);
             this.Side_menu.TabIndex = 0;
+            // 
+            // LabelCreation
+            // 
+            this.LabelCreation.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelCreation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.LabelCreation.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelCreation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            this.LabelCreation.Location = new System.Drawing.Point(6, 480);
+            this.LabelCreation.Name = "LabelCreation";
+            this.LabelCreation.Size = new System.Drawing.Size(260, 60);
+            this.LabelCreation.TabIndex = 7;
+            this.LabelCreation.Text = "Créer";
+            this.LabelCreation.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // LabelPrendre
+            // 
+            this.LabelPrendre.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelPrendre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.LabelPrendre.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelPrendre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            this.LabelPrendre.Location = new System.Drawing.Point(6, 420);
+            this.LabelPrendre.Name = "LabelPrendre";
+            this.LabelPrendre.Size = new System.Drawing.Size(260, 60);
+            this.LabelPrendre.TabIndex = 6;
+            this.LabelPrendre.Text = "Prendre";
+            this.LabelPrendre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.LabelPrendre.Click += new System.EventHandler(this.LabelPrendre_Click);
+            // 
+            // LabelAjouter
+            // 
+            this.LabelAjouter.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.LabelAjouter.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(66)))), ((int)(((byte)(80)))));
+            this.LabelAjouter.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LabelAjouter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
+            this.LabelAjouter.Location = new System.Drawing.Point(6, 360);
+            this.LabelAjouter.Name = "LabelAjouter";
+            this.LabelAjouter.Size = new System.Drawing.Size(260, 60);
+            this.LabelAjouter.TabIndex = 5;
+            this.LabelAjouter.Text = "Ajouter";
+            this.LabelAjouter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btn_courses
             // 
@@ -120,10 +166,13 @@ namespace frigobox
             // 
             // side_panel
             // 
+            this.side_panel.AutoSize = true;
+            this.side_panel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.side_panel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(112)))), ((int)(((byte)(114)))), ((int)(((byte)(115)))));
-            this.side_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.side_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.side_panel.ForeColor = System.Drawing.Color.Black;
             this.side_panel.Location = new System.Drawing.Point(266, 0);
+            this.side_panel.MinimumSize = new System.Drawing.Size(784, 561);
             this.side_panel.Name = "side_panel";
             this.side_panel.Size = new System.Drawing.Size(784, 561);
             this.side_panel.TabIndex = 1;
@@ -137,14 +186,13 @@ namespace frigobox
             this.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(1066, 600);
             this.MinimumSize = new System.Drawing.Size(1066, 600);
             this.Name = "Frigobox_main";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.Text = "Frigobox";
             this.Side_menu.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -157,6 +205,9 @@ namespace frigobox
         private System.Windows.Forms.Label btn_stock;
         private System.Windows.Forms.Label l_prog_name;
         private System.Windows.Forms.Panel side_panel;
+        private System.Windows.Forms.Label LabelCreation;
+        private System.Windows.Forms.Label LabelPrendre;
+        private System.Windows.Forms.Label LabelAjouter;
     }
 }
 

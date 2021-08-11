@@ -68,6 +68,12 @@
     <Compile Include="Forms\courses.Designer.cs">
       <DependentUpon>courses.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\creation_Produit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\creation_Produit.Designer.cs">
+      <DependentUpon>creation_Produit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\database_creation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,18 @@
     <Compile Include="Forms\stock.Designer.cs">
       <DependentUpon>stock.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\stock_ajout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\stock_ajout.Designer.cs">
+      <DependentUpon>stock_ajout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\stock_retrait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\stock_retrait.Designer.cs">
+      <DependentUpon>stock_retrait.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\vignette_recette.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +126,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\courses.resx">
       <DependentUpon>courses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\creation_Produit.resx">
+      <DependentUpon>creation_Produit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\database_creation.resx">
       <DependentUpon>database_creation.cs</DependentUpon>
@@ -154,6 +175,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="frigobox_DB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="frigobox_DB_log.ldf">
+      <DependentUpon>frigobox_DB.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
