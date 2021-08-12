@@ -15,7 +15,13 @@ namespace frigobox.Forms
         public recettes()
         {
             InitializeComponent();
-            //basic_presentation(new Forms.vignette_recette());
+            basic_presentation(new Forms.vignette_recette());
+            basic_presentation(new Forms.vignette_recette());
+            basic_presentation(new Forms.vignette_recette());
+            basic_presentation(new Forms.vignette_recette());
+            basic_presentation(new Forms.vignette_recette());
+            basic_presentation(new Forms.vignette_recette());
+            basic_presentation(new Forms.vignette_recette());
         }
 
         private void basic_presentation(Form vignette)

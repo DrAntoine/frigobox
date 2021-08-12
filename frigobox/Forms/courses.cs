@@ -46,7 +46,15 @@ namespace frigobox.Forms
             while (dataReader.Read())
             {
                 empty = false;
-                string item = dataReader.GetValue(0).ToString()+" - "+dataReader.GetValue(1).ToString() + " - " + dataReader.GetValue(2).ToString();
+                string item = "";
+                if (dataReader.GetValue(2).ToString() == "")
+                {
+                    item = dataReader.GetValue(0).ToString() + " - " + dataReader.GetValue(1).ToString();
+                }
+                else
+                {
+                    item = dataReader.GetValue(0).ToString() + " - " + dataReader.GetValue(1).ToString() + " - " + dataReader.GetValue(2).ToString();
+                }
                 liste_course.Items.Add(item);
             }
             dataReader.Close();

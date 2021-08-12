@@ -62,6 +62,7 @@ namespace frigobox.Forms
             // labelCommentaire
             // 
             this.labelCommentaire.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.labelCommentaire.Enabled = false;
             this.labelCommentaire.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
             this.labelCommentaire.Location = new System.Drawing.Point(0, 361);
             this.labelCommentaire.Name = "labelCommentaire";
@@ -69,14 +70,17 @@ namespace frigobox.Forms
             this.labelCommentaire.TabIndex = 8;
             this.labelCommentaire.Text = "Commentaire :";
             this.labelCommentaire.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelCommentaire.Visible = false;
             // 
             // textBoxCommentaire
             // 
             this.textBoxCommentaire.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.textBoxCommentaire.Enabled = false;
             this.textBoxCommentaire.Location = new System.Drawing.Point(303, 367);
             this.textBoxCommentaire.Name = "textBoxCommentaire";
             this.textBoxCommentaire.Size = new System.Drawing.Size(361, 43);
             this.textBoxCommentaire.TabIndex = 7;
+            this.textBoxCommentaire.Visible = false;
             // 
             // label_quantite
             // 

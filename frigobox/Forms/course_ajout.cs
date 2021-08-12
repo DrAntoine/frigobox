@@ -26,12 +26,24 @@ namespace frigobox.Forms
             int idProduit = getItemID(Liste_Produit.SelectedItems[0].ToString());
             int idListe = 0;
             int nombreItems = Convert.ToInt32(nombreItemBox .Value);
-            string commentaire  =  textBoxCommentaire.Text;
+            //string commentaire  =  textBoxCommentaire.Text;
             if (nombreItems > 0)
             {
-                int idCourse = getNewID();
-                string sql = "Insert into Courses (Id_course,Id_liste,Id_produit_fk,Quantite_course,Commentaire_course) values ("
-                + idCourse + ", " + idListe + ",  " + idProduit + ", " + nombreItems + ",'"+ commentaire +"');";
+                int itemExist = checkProduitInCourse(idProduit);
+                string sql = "";
+                if(itemExist == -1)
+                {
+                    int idCourse = getNewID();
+                    sql = "Insert into Courses (Id_course,Id_liste,Id_produit_fk,Quantite_course) values ("
+                    + idCourse + ", " + idListe + ",  " + idProduit + ", " + nombreItems + ");";
+                }
+                else
+                {
+                    sql = "select Quantite_course from Courses where Id_course="  +  itemExist  +  ";";
+                    int quantiteProduit = Convert.ToInt32(getFromDB(sql));
+                    int New_quantite = quantiteProduit + Convert.ToInt32(nombreItemBox.Value);
+                    sql = "Update Courses Set Quantite_course=" + New_quantite + "where Id_course=" + itemExist + ";";
+                }
                 addToDB(sql);
             }
 
@@ -48,6 +60,21 @@ namespace frigobox.Forms
             }
             Liste_Produit.ClearSelected();
             label_Ajouter.Enabled = false;
+        }
+
+        private int checkProduitInCourse(int nbProduit)
+        {
+            string sql = "Select Id_course from Courses where Id_produit_fk = " + nbProduit + ";";
+            string result = getFromDB(sql);
+            if (result == "")
+            {
+                return -1;
+            }
+            else
+            {
+                int idCourse = Convert.ToInt32(result);
+                return idCourse;
+            }
         }
 
         private void listUpdated(object sender, EventArgs e)
