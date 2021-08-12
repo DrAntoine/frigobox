@@ -74,7 +74,7 @@ namespace frigobox.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.Label_Validation.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(64)))), ((int)(((byte)(92)))));
             this.Label_Validation.Enabled = false;
-            this.Label_Validation.ForeColor = System.Drawing.Color.White;
+            this.Label_Validation.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Label_Validation.Location = new System.Drawing.Point(0, 391);
             this.Label_Validation.Name = "Label_Validation";
             this.Label_Validation.Size = new System.Drawing.Size(744, 36);
@@ -88,7 +88,7 @@ namespace frigobox.Forms
             this.Label_UniteQuantite.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label_UniteQuantite.AutoSize = true;
             this.Label_UniteQuantite.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Label_UniteQuantite.ForeColor = System.Drawing.Color.White;
+            this.Label_UniteQuantite.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Label_UniteQuantite.Location = new System.Drawing.Point(127, 236);
             this.Label_UniteQuantite.Name = "Label_UniteQuantite";
             this.Label_UniteQuantite.Size = new System.Drawing.Size(192, 26);
@@ -98,6 +98,7 @@ namespace frigobox.Forms
             // Textbox_UniteProduit
             // 
             this.Textbox_UniteProduit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Textbox_UniteProduit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Textbox_UniteProduit.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Textbox_UniteProduit.Location = new System.Drawing.Point(447, 233);
             this.Textbox_UniteProduit.Name = "Textbox_UniteProduit";
@@ -108,6 +109,7 @@ namespace frigobox.Forms
             // Textbox_QuantiteInitial
             // 
             this.Textbox_QuantiteInitial.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Textbox_QuantiteInitial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Textbox_QuantiteInitial.Font = new System.Drawing.Font("Century Gothic", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Textbox_QuantiteInitial.Location = new System.Drawing.Point(326, 233);
             this.Textbox_QuantiteInitial.Name = "Textbox_QuantiteInitial";
@@ -119,6 +121,7 @@ namespace frigobox.Forms
             // Textbox_sous_categorie
             // 
             this.Textbox_sous_categorie.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Textbox_sous_categorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Textbox_sous_categorie.Enabled = false;
             this.Textbox_sous_categorie.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Textbox_sous_categorie.Location = new System.Drawing.Point(392, 184);
@@ -132,7 +135,7 @@ namespace frigobox.Forms
             this.Label_SousCategorie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label_SousCategorie.AutoSize = true;
             this.Label_SousCategorie.Enabled = false;
-            this.Label_SousCategorie.ForeColor = System.Drawing.Color.White;
+            this.Label_SousCategorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Label_SousCategorie.Location = new System.Drawing.Point(124, 181);
             this.Label_SousCategorie.Name = "Label_SousCategorie";
             this.Label_SousCategorie.Size = new System.Drawing.Size(246, 36);
@@ -142,6 +145,7 @@ namespace frigobox.Forms
             // Textbox_categorie
             // 
             this.Textbox_categorie.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Textbox_categorie.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Textbox_categorie.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Textbox_categorie.Location = new System.Drawing.Point(392, 137);
             this.Textbox_categorie.Name = "Textbox_categorie";
@@ -153,7 +157,7 @@ namespace frigobox.Forms
             // 
             this.Label_categorie.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label_categorie.AutoSize = true;
-            this.Label_categorie.ForeColor = System.Drawing.Color.White;
+            this.Label_categorie.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Label_categorie.Location = new System.Drawing.Point(196, 134);
             this.Label_categorie.Name = "Label_categorie";
             this.Label_categorie.Size = new System.Drawing.Size(174, 36);
@@ -164,7 +168,7 @@ namespace frigobox.Forms
             // 
             this.Label_nomProduit.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Label_nomProduit.AutoSize = true;
-            this.Label_nomProduit.ForeColor = System.Drawing.Color.White;
+            this.Label_nomProduit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Label_nomProduit.Location = new System.Drawing.Point(272, 88);
             this.Label_nomProduit.Name = "Label_nomProduit";
             this.Label_nomProduit.Size = new System.Drawing.Size(98, 36);
@@ -174,6 +178,7 @@ namespace frigobox.Forms
             // Textbox_nom
             // 
             this.Textbox_nom.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.Textbox_nom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Textbox_nom.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Textbox_nom.Location = new System.Drawing.Point(392, 91);
             this.Textbox_nom.Name = "Textbox_nom";
@@ -186,7 +191,7 @@ namespace frigobox.Forms
             // 
             this.Label_Section.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label_Section.ForeColor = System.Drawing.Color.White;
+            this.Label_Section.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(240)))), ((int)(((byte)(241)))));
             this.Label_Section.Location = new System.Drawing.Point(0, 20);
             this.Label_Section.Name = "Label_Section";
             this.Label_Section.Size = new System.Drawing.Size(744, 40);
@@ -197,7 +202,7 @@ namespace frigobox.Forms
             // creation_Produit
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(76)))), ((int)(((byte)(60)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
             this.ClientSize = new System.Drawing.Size(784, 567);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century Gothic", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

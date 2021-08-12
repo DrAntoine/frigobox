@@ -21,14 +21,15 @@ namespace frigobox
         Red         : #E74C3C   #A8382C     #------
         White       : #ECF0F1   #707273     #AFB2B3
         Light blue  : #3498DB   #256C9C     #16405C
-        Light blue  : #3498DB   #256C9C     #16405C
         Deep blue   : #2980DB   #0D283B     #1B547A
          */
 
         private Form active_side_panel_Form;
         private lowerPanelConfiguration active_lower_panel_configuration;
         private bool db_connected = false;
-        enum lowerPanelConfiguration { vide, stock};
+        enum lowerPanelConfiguration { vide, stock, course};
+        enum state { home, stock, course, recette, autre }
+        state actualStatus = state.home;
         
         // chaine de connection antoine
         string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\Users\Dairi\Documents\Études\HEH-M0\Q1\C#\frigobox\frigobox_DB.mdf;Integrated Security=True;Connect Timeout=30";
@@ -113,7 +114,7 @@ namespace frigobox
                 LabelPrendre.Enabled = false;
                 LabelPrendre.Visible = false;
             }
-            else if (configPanel == lowerPanelConfiguration.stock)
+            else if (configPanel == lowerPanelConfiguration.stock||configPanel == lowerPanelConfiguration.course)
             {
                 LabelAjouter.Enabled = true;
                 LabelAjouter.Visible = true;
@@ -121,12 +122,21 @@ namespace frigobox
                 LabelCreation.Visible = true;
                 LabelPrendre.Enabled = true;
                 LabelPrendre.Visible = true;
+                if (configPanel == lowerPanelConfiguration.course)
+                {
+                    LabelPrendre.Text = "Retirer"; 
+                }
+                else
+                {
+                    LabelPrendre.Text = "Prendre";
+                }
             }
         }
 
 
         private void btn_home_Click(object sender, EventArgs e)
         {
+            actualStatus = state.home;
             Open_side_panel_form(new Forms.home(h_db_connected: db_connected, connectionString), sender);
             Open_lower_panel_form(lowerPanelConfiguration.vide);
         }
@@ -135,6 +145,7 @@ namespace frigobox
         {
             if(db_connected)
             {
+                actualStatus = state.stock;
                 Open_side_panel_form(new Forms.stock(connectionString), sender);
                 Open_lower_panel_form(lowerPanelConfiguration.stock);
             }
@@ -144,6 +155,7 @@ namespace frigobox
         {
             if (db_connected)
             {
+                actualStatus = state.recette;
                 Open_side_panel_form(new Forms.recettes(), sender);
                 Open_lower_panel_form(lowerPanelConfiguration.vide);
             }
@@ -153,26 +165,46 @@ namespace frigobox
         {
             if (db_connected)
             {
-                Open_side_panel_form(new Forms.courses(), sender);
-                Open_lower_panel_form(lowerPanelConfiguration.vide);
+                actualStatus = state.course;
+                Open_side_panel_form(new Forms.courses(connectionString), sender);
+                //Open_side_panel_form(new Forms.courses(), sender); //provoque intentionnellement l'erreur de DB
+                Open_lower_panel_form(lowerPanelConfiguration.course);
             }
         }
 
         private void ouvertureCreationForm(object sender, EventArgs e)
         {
-            Open_side_panel_form(new Forms.creation_Produit(connectionString), sender);
-            Open_lower_panel_form(lowerPanelConfiguration.vide);
+            if(actualStatus==state.course || actualStatus==state.stock)
+            {
+                Open_side_panel_form(new Forms.creation_Produit(connectionString), sender);
+                Open_lower_panel_form(lowerPanelConfiguration.vide);
+            }
         }
 
         private void ouvertureAjoutForm(object sender, EventArgs e)
         {
-            Open_side_panel_form(new Forms.stock_ajout(connectionString), sender);
+            if (actualStatus == state.stock)
+            {
+                Open_side_panel_form(new Forms.stock_ajout(connectionString), sender);
+            }
+            else if (actualStatus == state.course)
+            {
+                Open_side_panel_form(new Forms.course_ajout(connectionString), sender);
+            }
             Open_lower_panel_form(lowerPanelConfiguration.vide);
+
         }
 
         private void LabelPrendre_Click(object sender, EventArgs e)
         {
-            Open_side_panel_form(new Forms.stock_retrait(connectionString), sender);
+            if (actualStatus == state.stock)
+            {
+                Open_side_panel_form(new Forms.stock_retrait(connectionString), sender);
+            }
+            else if (actualStatus ==state.course)
+            {
+                Open_side_panel_form(new Forms.course_retrait(connectionString), sender);
+            }
             Open_lower_panel_form(lowerPanelConfiguration.vide);
         }
     }

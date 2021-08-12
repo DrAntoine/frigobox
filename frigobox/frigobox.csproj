@@ -49,7 +49,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.20.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -67,6 +69,18 @@
     </Compile>
     <Compile Include="Forms\courses.Designer.cs">
       <DependentUpon>courses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\course_ajout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\course_ajout.Designer.cs">
+      <DependentUpon>course_ajout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\course_retrait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\course_retrait.Designer.cs">
+      <DependentUpon>course_retrait.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\creation_Produit.cs">
       <SubType>Form</SubType>
@@ -127,6 +141,12 @@
     <EmbeddedResource Include="Forms\courses.resx">
       <DependentUpon>courses.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\course_ajout.resx">
+      <DependentUpon>course_ajout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\course_retrait.resx">
+      <DependentUpon>course_retrait.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\creation_Produit.resx">
       <DependentUpon>creation_Produit.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\stock.resx">
       <DependentUpon>stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\stock_retrait.resx">
+      <DependentUpon>stock_retrait.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\vignette_recette.resx">
       <DependentUpon>vignette_recette.cs</DependentUpon>

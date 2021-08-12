@@ -111,6 +111,7 @@ namespace frigobox.Forms
             }
             dataReader.Close();
             cnn.Close();
+            listeProduits.Sorted = true;
             if(dataLue == false)
             {
                 listeProduits.Items.Clear();
@@ -273,30 +274,33 @@ namespace frigobox.Forms
 
         private void initQuantite()
         {
-            string itemSelected = listeProduits.SelectedItem.ToString();
-            string item = itemSelected.Split('[')[1];
-            item = item.Split(']')[0];
-            int i = Convert.ToInt32(item);
-            string sql = "select Stocks.Quantite_restante_produit, Unite_mesure.Nom_unite from Stocks, Unite_mesure, Produits where Stocks.Id_stock = " + i + " and Stocks.Id_produit_fk = Produits.Id_produit and Unite_mesure.Id_unite = Produits.Id_unite_fk";
-            SqlConnection cnn;
-            cnn = new SqlConnection(chaineDeConnexion);
-            cnn.Open();
-            SqlCommand command;
-            SqlDataReader dataReader;
-            command = new SqlCommand(sql, cnn);
-            dataReader = command.ExecuteReader();
-            int quantite = 0;
-            string unit = "";
-            while (dataReader.Read())
+            if(listeProduits.SelectedItem != null)
             {
-                quantite = Convert.ToInt32(dataReader.GetValue(0).ToString());
-                unit = dataReader.GetValue(1).ToString();
+                string itemSelected = listeProduits.SelectedItem.ToString();
+                string item = itemSelected.Split('[')[1];
+                item = item.Split(']')[0];
+                int i = Convert.ToInt32(item);
+                string sql = "select Stocks.Quantite_restante_produit, Unite_mesure.Nom_unite from Stocks, Unite_mesure, Produits where Stocks.Id_stock = " + i + " and Stocks.Id_produit_fk = Produits.Id_produit and Unite_mesure.Id_unite = Produits.Id_unite_fk";
+                SqlConnection cnn;
+                cnn = new SqlConnection(chaineDeConnexion);
+                cnn.Open();
+                SqlCommand command;
+                SqlDataReader dataReader;
+                command = new SqlCommand(sql, cnn);
+                dataReader = command.ExecuteReader();
+                int quantite = 0;
+                string unit = "";
+                while (dataReader.Read())
+                {
+                    quantite = Convert.ToInt32(dataReader.GetValue(0).ToString());
+                    unit = dataReader.GetValue(1).ToString();
+                }
+                dataReader.Close();
+                cnn.Close();
+                labelQuantite.Text = "Quantité (" + quantite + " " + unit + ") :";
+                QuantiteControl.Maximum = quantite;
+                quantiteMaxProduit = quantite;
             }
-            dataReader.Close();
-            cnn.Close();
-            labelQuantite.Text = "Quantité (" +quantite +" "+ unit + ") :";
-            QuantiteControl.Maximum = quantite;
-            quantiteMaxProduit = quantite;
         }
     }
 }

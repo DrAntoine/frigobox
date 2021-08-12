@@ -53,6 +53,7 @@ namespace frigobox.Forms
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listeStocks.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(56)))), ((int)(((byte)(44)))));
+            this.listeStocks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.listeStocks.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listeStocks.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(236)))), ((int)(((byte)(230)))), ((int)(((byte)(241)))));
             this.listeStocks.HideSelection = false;

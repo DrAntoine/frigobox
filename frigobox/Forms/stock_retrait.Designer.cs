@@ -246,11 +246,11 @@ namespace frigobox.Forms
             // 
             this.Label_titre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.Label_titre.Location = new System.Drawing.Point(258, 32);
+            this.Label_titre.Location = new System.Drawing.Point(0, 30);
             this.Label_titre.Name = "Label_titre";
-            this.Label_titre.Size = new System.Drawing.Size(234, 43);
+            this.Label_titre.Size = new System.Drawing.Size(744, 43);
             this.Label_titre.TabIndex = 0;
-            this.Label_titre.Text = "Retrait produit";
+            this.Label_titre.Text = "Retrait du stock";
             this.Label_titre.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // stock_retrait
